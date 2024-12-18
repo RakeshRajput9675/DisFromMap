@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/material_dynamic_neutral_variant60"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- CardView for Input Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            >
+
+            <!-- Input for Source Place Name -->
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/etSourcePlace"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Source"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Input for Destination Place Name -->
+            <EditText
+                android:id="@+id/etDestPlace"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Destination"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Button to Show Route -->
+            <Button
+                android:id="@+id/btnShowRoute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/material_dynamic_neutral70"
+                android:text="Show Route"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for Distance Display -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Distance: 0 km"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for Map View -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
